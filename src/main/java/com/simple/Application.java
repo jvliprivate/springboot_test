@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication 
 //@EnableAutoConfiguration
-//@MapperScan("com.simple.mapper")        
-//@EnableTransactionManagement(proxyTargetClass = true)  
+@MapperScan("com.simple.mapper")        
+@EnableTransactionManagement(proxyTargetClass = true)  
 public class Application {//implements EmbeddedServletContainerCustomizer{
 	
 	public static void main(String[] args) {

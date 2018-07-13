@@ -14,28 +14,32 @@ spring:
     suffix: .ftl
     template-loader-path: classpath:/templates/
   datasource:
-    #name: mydb
-    #type: com.alibaba.druid.pool.DruidDataSource
+    name: mydb
+    type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://localhost:3306/test
     username: root
     password: 123456
     driver-class-name: com.mysql.jdbc.Driver
+    minIdle: 1
+    maxActive: 2
+    initialSize: 1
+    timeBetweenEvictionRunsMillis: 3000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'ZTM' FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
   resources:
     static-locations: classpath:/static/staticTemplates
-    
-#    minIdle: 1
-#    maxActive: 2
-#    initialSize: 1
-#    timeBetweenEvictionRunsMillis: 3000
-#    minEvictableIdleTimeMillis: 300000
-#    validationQuery: SELECT 'ZTM' FROM DUAL
-#    testWhileIdle: true
-#    testOnBorrow: false
-#    testOnReturn: false
 mybatis: 
-  #mapper-locations: classpath*:Mapper/*Mapper.xml
+  mapper-locations: classpath*:mapper/*Mapper.xml
   type-aliases-package: com.simple.domain
   configuration:
         map-underscore-to-camel-case: true
         default-fetch-size: 100
         default-statement-timeout: 30
+pagehelper: #pagehelper分页插件
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql

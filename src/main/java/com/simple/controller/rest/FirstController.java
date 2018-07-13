@@ -37,7 +37,8 @@ public class FirstController {
 //        User user = (User)objects[0];
         //输出调用结果
        // System.out.println("*****"+user.toString());
-		userService.createUser(name, 33);
+		//userService.createUser(name, 33);
+		userService.selectTUsers();
 		return "Hello World";//objects[0].toString();
 	}	
 	
