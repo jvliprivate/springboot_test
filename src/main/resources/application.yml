@@ -1,0 +1,41 @@
+server: 
+  prot: 8081
+  
+spring: 
+  freemarker: 
+    allow-request-override: false
+    cache: true
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    suffix: .ftl
+    template-loader-path: classpath:/templates/
+  datasource:
+    #name: mydb
+    #type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  resources:
+    static-locations: classpath:/static/staticTemplates
+    
+#    minIdle: 1
+#    maxActive: 2
+#    initialSize: 1
+#    timeBetweenEvictionRunsMillis: 3000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: SELECT 'ZTM' FROM DUAL
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+mybatis: 
+  #mapper-locations: classpath*:Mapper/*Mapper.xml
+  type-aliases-package: com.simple.domain
+  configuration:
+        map-underscore-to-camel-case: true
+        default-fetch-size: 100
+        default-statement-timeout: 30
