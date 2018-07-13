@@ -6,47 +6,38 @@ import java.util.Date;
 public class User implements Serializable {
 
 	private static final long serialVersionUID = -5939599230753662529L;
-	private String userId;
-	private String username;
+	private Integer id;
+	private String name;
 	private String age;
-	private Date updateTime;
+	//private Date updateTime;
 
-	// getter setter ......
-	public void setUserId(String userId) {
-		this.userId = userId;
+
+	public Integer getId() {
+		return id;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	public void setAge(String age) {
-		this.age = age;
+	public String getName() {
+		return name;
 	}
 
-	public void setUpdateTime(Date updateTime) {
-		this.updateTime = updateTime;
-	}
-
-	public String getUserId() {
-		return userId;
-	}
-
-	public String getUserName() {
-		return username;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getAge() {
 		return age;
 	}
 
-	public Date getUpdateTime() {
-		return updateTime;
+	public void setAge(String age) {
+		this.age = age;
 	}
-	
 	@Override
 	public String toString(){
 		
-		return "userId:"+userId+"  username:"+username+"  age:"+age+"  updateTime:"+updateTime;
+		return "userId:"+id+"  username:"+name+"  age:"+age ;
 	}
 }
