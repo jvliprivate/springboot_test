@@ -8,32 +8,32 @@ import javax.jws.WebService;
 
 import com.simple.domain.User;
 
-//@WebService(targetNamespace="http://ws.service.simple.com/",endpointInterface = "com.simple.service.ws.service.UserWebService")
- public class UserWebServiceImp {//implements UserWebService{
+@WebService(targetNamespace="http://ws.service.simple.com/",endpointInterface = "com.simple.service.ws.service.UserWebService")
+ public class UserWebServiceImp implements UserWebService{
      
      private Map<String, User> userMap = new HashMap<String, User>();
      public UserWebServiceImp() {
          System.out.println("向实体类插入数据");
          User user = new User();
-         user.setUserId("411001");
-         user.setUsername("zhansan");
+         user.setId(411001);
+         user.setName("zhansan");
          user.setAge("20");
-         user.setUpdateTime(new Date());
-         userMap.put(user.getUserId(), user);
+//         user.setUpdateTime(new Date());
+         userMap.put(""+user.getId(), user);
          
          user = new User();
-         user.setUserId("411002");
-         user.setUsername("lisi");
+         user.setId(411002);
+         user.setName("lisi");
          user.setAge("30");
-         user.setUpdateTime(new Date());
-         userMap.put(user.getUserId(), user);
+//         user.setUpdateTime(new Date());
+         userMap.put(user.getId()+"", user);
          
          user = new User();
-         user.setUserId("411003");
-         user.setUsername("wangwu");
+         user.setId(411003);
+         user.setName("wangwu");
          user.setAge("40");
-         user.setUpdateTime(new Date());
-         userMap.put(user.getUserId(), user);
+//         user.setUpdateTime(new Date());
+         userMap.put(user.getId()+"", user);
      }
 //     @Override
 //     public String getName(String userId) {
@@ -44,5 +44,15 @@ import com.simple.domain.User;
 //         System.out.println("userMap是:"+userMap);
 //         return userMap.get(userId);
 //     }
+	@Override
+	public String getName(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public User getUser(String userId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
  
  }

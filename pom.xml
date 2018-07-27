@@ -119,7 +119,12 @@
              <artifactId>cxf-rt-transports-http</artifactId>
              <version>3.1.6</version>
          </dependency>
-	
+	<dependency>
+        <groupId>com.alibaba.spring.boot</groupId>
+        <artifactId>dubbo-spring-boot-starter</artifactId>
+        <version>2.0.0</version>
+    </dependency>
+    
 	<!-- dubbo -->  
        <!--  <dependency>  
             <groupId>com.alibaba</groupId>  

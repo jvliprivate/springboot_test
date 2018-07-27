@@ -1,6 +1,5 @@
 server: 
-  prot: 8081
-  
+  port: 8081
 spring: 
   freemarker: 
     allow-request-override: false
@@ -31,6 +30,19 @@ spring:
     testOnReturn: false
   resources:
     static-locations: classpath:/static/staticTemplates
+#  dubbo: 
+#    scan: 
+#      basePackages: com.alibaba.boot.dubbo.demo.provider.service
+#    application: 
+#      id: dubbo-provider-demo
+#      name: dubbo-provider-demo
+#    protocol: 
+#      id: dubbo 
+#      name: dubbo
+#      port: 12345
+#    registry: 
+#      id: my-registry
+#      address: N/A
 mybatis: 
   mapper-locations: classpath*:mapper/*Mapper.xml
   type-aliases-package: com.simple.domain
@@ -43,3 +55,5 @@ pagehelper: #pagehelper分页插件
     reasonable: true
     supportMethodsArguments: true
     params: count=countSql
+management: 
+  port: 9091
