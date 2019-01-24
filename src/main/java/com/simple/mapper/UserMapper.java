@@ -12,7 +12,7 @@ import org.apache.ibatis.annotations.Update;
 import com.simple.domain.User;
 
 @Mapper
-public interface UserMapper1 {
+public interface UserMapper {
  
 	@Select("SELECT * FROM user WHERE id = #{id}")
 	User getUserById(Integer id);

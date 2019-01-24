@@ -18,6 +18,7 @@ import com.simple.domain.User;
          user.setId(411001);
          user.setName("zhansan");
          user.setAge("20");
+
 //         user.setUpdateTime(new Date());
          userMap.put(""+user.getId(), user);
          
@@ -47,12 +48,12 @@ import com.simple.domain.User;
 	@Override
 	public String getName(String userId) {
 		// TODO Auto-generated method stub
-		return null;
+        return userMap.get(Integer.valueOf(userId)).getName();
 	}
 	@Override
 	public User getUser(String userId) {
 		// TODO Auto-generated method stub
-		return null;
+		return userMap.get(Integer.valueOf(userId));
 	}
  
  }

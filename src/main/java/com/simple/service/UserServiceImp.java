@@ -4,13 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.simple.domain.TUsers;
 import com.simple.domain.User;
 import com.simple.mapper.TUsersMapper;
-import com.simple.mapper.UserMapper1;
+import com.simple.mapper.TUsersMapper;
 
 @Service
 public class UserServiceImp implements UserService{
@@ -18,7 +17,7 @@ public class UserServiceImp implements UserService{
 	private JdbcTemplate jdbcTemplate;
 	
 	@Autowired
-	private UserMapper1 userMapper1;
+	private TUsersMapper userMapper1;
 	
 	@Autowired
 	private TUsersMapper tUsersMapper;
